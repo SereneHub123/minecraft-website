@@ -1,16 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 :root {
     --accent-default: rgb(28, 136, 179);
     --muted-default: rgba(28, 136, 179, 0.753);
     --bg-default: rgba(28, 136, 179, 0.08);
 }
+
 body {
     background-image: url(media/background.png);
     background-position: center;
@@ -37,6 +40,7 @@ body {
     backdrop-filter: blur(6px);
     border-radius: 80px;
 }
+
 .logoPlaceholder {
     display: flex;
     justify-content: center;
@@ -45,14 +49,16 @@ body {
     overflow: hidden;
     height: 100%;
 }
+
 .logoPlaceholder img {
     height: 100%;
     width: 100%;
     object-fit: contain;
-    object-position:  center;
+    object-position: center;
     background-color: rgba(100, 94, 94, 0.308);
     border-radius: 100%;
 }
+
 .links {
     display: flex;
     justify-content: space-between;
@@ -61,12 +67,14 @@ body {
     width: fit-content;
     padding: 10px 15px;
 }
+
 .links a {
     color: rgb(236, 243, 248);
     text-decoration: none;
     font-family: "Poppins";
     font-size: 16px;
 }
+
 .hero {
     display: flex;
     flex-direction: column;
@@ -76,40 +84,76 @@ body {
     height: 100vh;
     width: 100%;
     padding-top: 70px;
-    
+
 }
+
 .heroHead {
     margin-top: 8px;
     display: flex;
     flex-direction: column;
     gap: 0;
 }
+
 .heroHead1, .heroHead2 {
     margin: 8px 0 0 0;
     line-height: 1.2;
     text-align: center;
     font-size: 4rem;
-    color:rgb(28, 136, 179);
+    color: rgb(28, 136, 179);
     letter-spacing: -3px;
     font-family: "Poppins";
     font-weight: 400;
 }
+
 .heroImg {
-    width: 100%;;
+    width: 100%;
+    ;
     height: 80px;
     object-fit: cover;
     object-position: center;
     transition: all 0.4s;
 
 }
+
 .heroImg:hover {
     transform: scale(1.05);
 }
-.changingTxt{
-    color: rgba(160, 211, 255, 0.76);
-    padding: 0 4px;
+
+.changingTxt {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    vertical-align: middle;
+    color: rgba(187, 223, 255, 0.76);
+    padding: 4px 12px;
     border-radius: 8px;
     background-color: rgba(113, 184, 247, 0.226);
+    white-space: nowrap;
+    transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.4s ease;
+    overflow: hidden;
+}
+
+.changingTxt i {
+    font-size: 0.85em;
+    opacity: 0.9;
+}
+
+.changingTxt.fade-in {
+    animation: fadeIn 0.4s ease forwards;
+}
+
+.changingTxt.fade-out {
+    animation: fadeOut 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; transform: translateY(0); }
+    to   { opacity: 0; transform: translateY(-8px); }
 }
 .heroNor {
     display: flex;
@@ -118,10 +162,11 @@ body {
     justify-content: center;
     align-items: center;
     gap: 30px;
-        width: 30%;
-        height: fit-content;
+    width: 30%;
+    height: fit-content;
 
 }
+
 .heroDes {
     display: flex;
     justify-content: center;
@@ -138,10 +183,11 @@ body {
 .heroDesText {
     text-align: center;
     font-size: 16px;
-    color:rgb(185, 224, 238);
+    color: rgb(185, 224, 238);
 }
+
 .heroBtn {
-        color: rgba(160, 211, 255, 0.76);
+    color: rgba(160, 211, 255, 0.76);
 
     gap: 16px;
     display: flex;
@@ -149,11 +195,13 @@ body {
     align-items: center;
     flex-direction: column;
 }
+
 .btns {
     display: flex;
     flex-direction: row;
     gap: 8px;
 }
+
 .heroIpBtn {
     border: 1px solid rgba(128, 174, 196, 0.404);
     padding: 6px 10px;
@@ -161,14 +209,16 @@ body {
     background-color: rgba(59, 149, 218, 0.158);
     font-family: "Poppins";
     border-radius: 10px;
-        color: rgba(160, 211, 255, 0.76);
-        transition: all 0.4s ease;
+    color: rgba(160, 211, 255, 0.76);
+    transition: all 0.4s ease;
 
 }
+
 .heroIpBtn:hover {
-        background-color: rgba(59, 149, 218, 0.288);
+    background-color: rgba(59, 149, 218, 0.288);
 
 }
+
 .elementsSection {
     display: flex;
     height: fit-content;
@@ -180,69 +230,141 @@ body {
     padding: 30px 60px;
     gap: 30px;
 }
+
 .txtLarge {
     font-size: 2.5rem;
     padding: 8px;
-    color:rgb(28, 136, 179);
+    color: rgb(0, 183, 255);
 
 
 }
+
 .elements {
     display: flex;
     gap: 40px;
     justify-content: center;
 }
+
 .element {
     height: fit-content;
     padding: 12px 12px;
     width: fit-content;
     display: flex;
-    flex-direction:  column;
+    flex-direction: column;
     background-color: transparent;
     backdrop-filter: blur(12px);
     border-radius: 8px;
     gap: 20px;
     border: 1px solid rgba(240, 248, 255, 0.12);
-
+    transition: all 0.4s ease;
 
 
 }
+
 .emLogo {
     height: auto;
     width: auto;
     padding: 8px;
     overflow: hidden;
 }
+
 .emName {
     display: flex;
     flex-direction: column;
     gap: 4px;
     width: 100%;
-    
-    
+
+
 }
+
 .svg {
     height: auto;
     width: 60px;
 }
+
 .em1 {
     font-size: 1.5rem;
-        color: var(--accent, rgb(28, 136, 179));
+    color: var(--accent, rgb(28, 136, 179));
 
 }
+
 .em2 {
     font-style: italic;
-        color: var(--muted, rgba(28, 136, 179, 0.753));
+    color: var(--muted, rgba(28, 136, 179, 0.753));
 
 
 }
+
 .emDes {
     padding: 4px;
-            color: var(--muted, rgba(28, 136, 179, 0.753));
+    color: var(--muted, rgba(28, 136, 179, 0.753));
 
 }
 
 
 .element .svg {
     color: var(--accent);
+}
+
+.fire:hover {
+    box-shadow: 0 0 2px rgba(255, 166, 0, 0.678);
+    border: 1px solid rgba(255, 166, 0, 0.315);
+}
+
+.water:hover {
+    box-shadow: 0 0 2px rgba(0, 238, 255, 0.678);
+    border: 1px solid rgba(0, 238, 255, 0.315);
+}
+
+.air:hover {
+    box-shadow: 0 0 2px rgba(228, 250, 255, 0.678);
+    border: 1px solid rgba(237, 245, 237, 0.315);
+}
+
+.earth:hover {
+    box-shadow: 0 0 2px rgba(128, 128, 128, 0.678);
+    border: 1px solid rgba(73, 73, 73, 0.315);
+}
+
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    height: fit-content;
+    width: fit-content;
+    animation: toastShow 0.7s ease;
+    color: var(--accent, rgb(28, 136, 179));
+    padding: 8px 12px;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.03);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(240, 248, 255, 0.12);
+
+
+}
+
+@keyframes toastShow {
+    from {
+        transform: translateX(30px);
+    }
+
+    to {
+        transform: translateX(0px);
+    }
+}
+
+.toast-hide {
+    animation: toastHide 0.3s ease forwards;
+}
+
+@keyframes toastHide {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(30px);
+        opacity: 0;
+    }
 }
