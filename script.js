@@ -50,7 +50,6 @@ window.addEventListener('DOMContentLoaded', () => {
             chtxt.style.backgroundColor = item.bg;
             chtxt.innerHTML = nextHTML;
 
-            // Fade in
             chtxt.classList.remove('fade-out');
             chtxt.classList.add('fade-in');
         }, 300);
@@ -77,8 +76,7 @@ function showToast(toastMsg) {
         toast.classList.add('toast-hide');
         setTimeout(() => {
             toast.remove();
-        }, 5000);
-
-    }, 5000);
+        }, 300);
+    }, 3000);
 
 }
